@@ -92,7 +92,7 @@ static Shifter* selectedShifter = &NoGearLever;
 static BMS BMSnone;
 static SimpBMS BMSsimp;
 static DaisychainBMS BMSdaisychain;
-static EMUSBMS BMSEMUS;
+static EmusBMS BMSEmus;
 static DCDC DCDCnone;
 static TeslaDCDC DCDCTesla;
 static BMS* selectedBMS = &BMSnone;

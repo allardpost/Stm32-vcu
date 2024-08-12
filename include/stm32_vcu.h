@@ -72,7 +72,7 @@
 #include "noHeater.h"
 #include "bms.h"
 #include "simpbms.h"
-#include "emusbms.h"
+#include "EmusBMS.h"
 #include "daisychainbms.h"
 #include "outlanderCharger.h"
 #include "Can_OBD2.h"

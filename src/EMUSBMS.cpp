@@ -48,14 +48,14 @@ void EmusBMS::SetCanInterface(CanHardware* c)
    //can->RegisterUserMessage(0x351);
 }
 
-bool EMUSBMS::BMSDataValid() {
+bool EmusBMS::BMSDataValid() {
    // Return false if primary BMS is not sending data.
    if(timeoutCounter < 1) return false;
    return true;
 }
 
 // Return whether charging is currently permitted.
-bool EMUSBMS::ChargeAllowed()
+bool EmusBMS::ChargeAllowed()
 {
    // Refuse to charge if the BMS is not sending data.
    if(!BMSDataValid()) return false;
@@ -74,14 +74,14 @@ bool EMUSBMS::ChargeAllowed()
 }
 
 // Return the maximum charge current allowed by the BMS.
-float EMUSBMS::MaxChargeCurrent()
+float EmusBMS::MaxChargeCurrent()
 {
    if(!ChargeAllowed()) return 0;
    return chargeCurrentLimit / 1000.0;
 }
 
 // Process statistics message from EmusBMS.
-void EMUSBMS::DecodeCAN(int id, uint8_t *data)
+void EmusBMS::DecodeCAN(int id, uint8_t *data)
 {
    if (id == EMUS_Can_address_base + EMUS_Can_offset_statistics)
    {
@@ -104,7 +104,7 @@ void EMUSBMS::DecodeCAN(int id, uint8_t *data)
    }
 }
 
-void EMUSBMS::Task100Ms() {
+void EmusBMS::Task100Ms() {
    
    // request statistics from EMUS
    can->Send(EMUS_Can_address_base + EMUS_Can_offset_statistics)

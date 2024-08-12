@@ -17,8 +17,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef EMUSBMS_H
-#define EMUSBMS_H
+#ifndef EmusBMS_H
+#define EmusBMS_H
 #include <stdint.h>
 
 class EmusBMS: public BMS
